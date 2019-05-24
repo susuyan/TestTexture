@@ -1,4 +1,5 @@
 PODS:
+  - ESPullToRefresh (2.8)
   - PINCache (3.0.1-beta.6):
     - PINCache/Arc-exception-safe (= 3.0.1-beta.6)
     - PINCache/Core (= 3.0.1-beta.6)
@@ -38,6 +39,7 @@ PODS:
     - Texture/Core
 
 DEPENDENCIES:
+  - ESPullToRefresh (from `https://github.com/susuyan/pull-to-refresh.git`)
   - SnapKit
   - SwiftyAttributes
   - Texture
@@ -51,7 +53,17 @@ SPEC REPOS:
     - SwiftyAttributes
     - Texture
 
+EXTERNAL SOURCES:
+  ESPullToRefresh:
+    :git: https://github.com/susuyan/pull-to-refresh.git
+
+CHECKOUT OPTIONS:
+  ESPullToRefresh:
+    :commit: 5b9c4af4607e921259a723270a8367a6bf31858b
+    :git: https://github.com/susuyan/pull-to-refresh.git
+
 SPEC CHECKSUMS:
+  ESPullToRefresh: 5a43805fa6f0938d8ee440bf44c6fc241e9adf76
   PINCache: d195fdba255283f7e9900a55e3cced377f431f9b
   PINOperation: a6219e6fc9db9c269eb7a7b871ac193bcf400aac
   PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
@@ -59,6 +71,6 @@ SPEC CHECKSUMS:
   SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
   Texture: 8ecf6984065a1e54f06bf97b349ecca28582acd7
 
-PODFILE CHECKSUM: ed3279a3446cd1374c01c838ec432a10ebdc1084
+PODFILE CHECKSUM: ae8d63e898f9a91eddd480818b6b11e68453ba13
 
 COCOAPODS: 1.6.0.beta.1

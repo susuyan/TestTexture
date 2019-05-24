@@ -9,6 +9,7 @@
 import UIKit
 import AsyncDisplayKit
 import SnapKit
+import ESPullToRefresh
 class ViewController: UIViewController {
 
     lazy private var tableViewNode: ASTableNode = {
@@ -27,7 +28,10 @@ class ViewController: UIViewController {
         title = "事件列表"
         setupTableViewNode()
 
-
+        tableViewNode.view.es.addPullToRefresh {
+            self.tableViewNode.view.es.stopPullToRefresh()
+            self.tableViewNode.reloadData()
+        }
     }
 
     override func viewWillLayoutSubviews() {
@@ -65,22 +69,22 @@ extension ViewController: ASTableDataSource{
         return 100
     }
 
-    //    func tableNode(_ tableNode: ASTableNode, nodeBlockForRowAt indexPath: IndexPath) -> ASCellNodeBlock {
-    //        return {
-    //            let cell = EventCellNode()
-    //
-    //            return cell
-    //        }
-    //    }
+    func tableNode(_ tableNode: ASTableNode, nodeBlockForRowAt indexPath: IndexPath) -> ASCellNodeBlock {
+        return {
+            let cell = EventCellNode()
 
-    func tableNode(_ tableNode: ASTableNode, nodeForRowAt indexPath: IndexPath) -> ASCellNode {
-        let cell = EventCellNode()
-        cell.selectionStyle = .none
-
-        //        let node = ASTextCellNode()
-        //        node.text = String(format: "[%ld.%ld] says hello!", indexPath.section, indexPath.row)
-
-        return cell
+            return cell
+        }
     }
+
+//    func tableNode(_ tableNode: ASTableNode, nodeForRowAt indexPath: IndexPath) -> ASCellNode {
+//        let cell = EventCellNode()
+//        cell.selectionStyle = .none
+//
+//        //        let node = ASTextCellNode()
+//        //        node.text = String(format: "[%ld.%ld] says hello!", indexPath.section, indexPath.row)
+//
+//        return cell
+//    }
 }
 

@@ -7,6 +7,7 @@ target 'TestTextureLayout' do
   pod 'Texture'
   pod 'SwiftyAttributes'
   pod 'SnapKit'
+  pod 'ESPullToRefresh', :git => 'https://github.com/susuyan/pull-to-refresh.git'
   # Pods for TestTextureLayout
 
   target 'TestTextureLayoutTests' do
